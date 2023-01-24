@@ -1,0 +1,110 @@
+/* ======== General ============ */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.overlay2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.btn-1 {
+  background-color: #aa0000;
+  color: #fff;
+  padding: 10px 40px 10px 40px;
+  border: 2px solid #aa0000;
+}
+
+.btn-1:hover {
+  background-color: #fff;
+  color: #aa0000;
+}
+
+.btn-2 {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px 40px 10px 40px;
+  border: 2px solid #000;
+}
+
+.btn-2:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 55px;
+  border-bottom: 4px solid #dd0a17;
+}
+
+/* ================ Header Video ================ */
+#header-video {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* ============== Success Story ========== */
+.success {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* ============= insta images ========= */
+.insta-img {
+  transition: all 0.3s ease-out;
+}
+
+.insta-img:hover {
+  transform: scale(1.03);
+  cursor: pointer;
+}
+
+/* ============= InGYM Page ========= */
+.reason {
+  position: relative;
+  font-weight: 900 !important;
+  font-size: 3em;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+  /* width: 50%; */
+}
+
+.reason .text::after {
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  bottom: 0;
+  margin: auto auto;
+  content: "";
+  display: block;
+  background-color: #e40032;
+  height: 8px;
+}
