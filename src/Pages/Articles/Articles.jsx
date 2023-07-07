@@ -1,60 +1,90 @@
-import React from "react";
-import inGYM from "../../assets/images/inGYM.jpeg";
-import online from "../../assets/images/online.jpeg";
+import React, { useState, useEffect } from "react";
+// ----------- Sanity --------------
+import { client } from "../../../lib/client";
+// ---------- Images -------------
+import header from "../../assets/images/articles.jpg";
+
+// ---------- Components ----------
+import SecondNavbar from "../../Components/SecondNavbar";
 import Header from "../../Components/Header";
+import ArticleCard from "../../Components/ArticleCard";
+import Insta from "../../Components/Insta";
 
 export default function Articles() {
+  const [articles, setArticles] = useState([]);
+  const [filtered, setFiltered] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    client
+      .fetch('*[_type == "articles"]')
+      .then((data) => {
+        setArticles(data);
+        setLoading(false);
+      })
+      .catch(console.error);
+  }, []);
+
+  useEffect(() => setFiltered(articles), [articles]);
+
+  // ================= filter =========
+  const allcategories = [
+    "الكل",
+    ...new Set(articles.map((article, index) => article.category)),
+  ];
+
+  const filter = (category) => {
+    if (category === "الكل") {
+      setFiltered(articles);
+      return;
+    }
+    setFiltered(articles.filter((article) => article.category === category));
+  };
+
   return (
     <>
+      <SecondNavbar />
       {/* ---------- Header ------------ */}
-      <Header title={"#READ"} img={inGYM} />
+      <Header title={"#Articles"} img={header} />
 
       {/* =========== Content ========= */}
-      <div className="container-fluid d-flex py-5 bg-success">
-        <div className="row py-5 bg-primary">
-          <div className="col-md-3 bg-danger">Mohamed</div>
-
-          <div className="col-md-9 bg-warning row gap-3 py-5">
-            <div className="col bg-info text-center">
-              <img src={online} className="w-100" />
-              <h4 className="py-2">title</h4>
+      <h2 className="hack-font-lg fw-bold text-center text-dark my-2">#READ</h2>
+      {!loading ? (
+        <div className="container-fluid py-4">
+          <div className="row d-flex">
+            <div className="filter-container col-lg-2 px-0 text-center">
+              {allcategories.map((category, index) => (
+                <button
+                  key={category}
+                  className="filterBtn d-lg-block btn-2 fw-bold text-capitalize"
+                  onClick={() => filter(category)}
+                >
+                  {category}
+                </button>
+              ))}
             </div>
 
-            <div className="col bg-info text-center">
-              <img src={online} className="w-100" />
-              <h4 className="py-2">title</h4>
-            </div>
-
-            <div className="col bg-info text-center">
-              <img src={online} className="w-100" />
-              <h4 className="py-2">title</h4>
-            </div>
-            <div className="col bg-info text-center">
-              <img src={online} className="w-100" />
-              <h4 className="py-2">title</h4>
+            <div className="col-lg-10">
+              <div className="bd-grid">
+                {filtered &&
+                  filtered.map((article) => (
+                    <ArticleCard article={article} key={article.id} />
+                  ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div className="container">
+          <div className="d-flex flex-column justify-content-center align-items-center my-5 py-5 bg-light">
+            <p className="fs-1 fw-bold mb-4">Loading...</p>
+            <i className="bx bx-loader-circle fs-1"></i>
+          </div>
+        </div>
+      )}
 
       {/* =========== Insta Images ========= */}
-      <div className="images">
-        <h2 className="fs-1 fw-bold text-center text-dark">#ONE_MORE</h2>
-        <div className="container m-auto gap-3 row py-4 px-0">
-          <div className="col-md px-0" style={{ overflow: `hidden` }}>
-            <img src={online} className="h-100 insta-img" />
-          </div>
-
-          <div className="col-md px-0">
-            <div className="mb-3 bg-primary" style={{ overflow: `hidden` }}>
-              <img src={inGYM} className="w-100 insta-img" />
-            </div>
-            <div style={{ overflow: `hidden` }}>
-              <img src={online} className="w-100 insta-img" />
-            </div>
-          </div>
-        </div>
-      </div>
+      <Insta />
     </>
   );
 }

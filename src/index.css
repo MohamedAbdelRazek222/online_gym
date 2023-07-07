@@ -1,4 +1,86 @@
-/* ======== General ============ */
+@import url("https://fonts.cdnfonts.com/css/hackney");
+@import url("https://fonts.cdnfonts.com/css/bullpen");
+
+* {
+  transition: all 0.3s;
+}
+
+:root {
+  --red-color: #9d0208;
+  --black-color: #000;
+  --img-height: 50%;
+}
+
+/* ========== Base =========== */
+li {
+  list-style: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #a7a5a5;
+  font-size: 1.2rem;
+}
+
+a:hover {
+  color: #fff;
+}
+
+/* =============== General Classes =============== */
+/* ---------- font -------- */
+.hack-font {
+  font-family: "Hackney", "sans-serif";
+}
+
+.hack-font-md {
+  font-family: "Hackney", "sans-serif";
+  font-size: 3rem;
+}
+
+.hack-font-lg {
+  font-family: "Hackney", "sans-serif";
+  font-size: 5rem;
+}
+
+.header-title {
+  font-family: "Hackney", "sans-serif";
+  font-size: 6rem;
+}
+
+.soul-font {
+  font-family: "Bullpen Hv", sans-serif;
+}
+
+.bottom-border {
+  border-bottom: 1px solid #aa0000;
+}
+
+/* --------- bg ---------- */
+.gray {
+  background-color: #ddd;
+}
+
+.gray-dark {
+  background-color: #888;
+}
+
+.dark {
+  background-color: var(--black-color);
+}
+
+.red {
+  color: #aa0000;
+}
+
+.bg-red {
+  background-color: #69090c;
+}
+
+.border-left {
+  border-left: 5px solid #aa0000;
+}
+
 .overlay {
   position: absolute;
   width: 100%;
@@ -8,7 +90,7 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1;
+  z-index: 2;
 }
 
 .overlay2 {
@@ -23,22 +105,23 @@
   z-index: 1;
 }
 
+/* ----- Buttons ----- */
 .btn-1 {
-  background-color: #aa0000;
+  background-color: var(--red-color);
   color: #fff;
-  padding: 10px 40px 10px 40px;
-  border: 2px solid #aa0000;
+  padding: 10px 40px;
+  border: 2px solid var(--red-color);
 }
 
 .btn-1:hover {
   background-color: #fff;
-  color: #aa0000;
+  color: var(--red-color);
 }
 
 .btn-2 {
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
-  padding: 10px 40px 10px 40px;
+  padding: 10px 40px;
   border: 2px solid #000;
 }
 
@@ -56,6 +139,26 @@
   border-bottom: 4px solid #dd0a17;
 }
 
+/* =========== NavBar ================ */
+#navbar {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  background-color: var(--black-color);
+  padding: 0px;
+}
+
+#navbar .nav-link {
+  cursor: pointer;
+}
+
+#navbar .nav-link:hover:not(:last-child) {
+  background-color: var(--red-color);
+}
+
+.active {
+  background-color: var(--red-color);
+}
 /* ================ Header Video ================ */
 #header-video {
   position: absolute;
@@ -88,23 +191,150 @@
 
 /* ============= InGYM Page ========= */
 .reason {
-  position: relative;
-  font-weight: 900 !important;
-  font-size: 3em;
+  font-size: 5em;
   letter-spacing: 0.05em;
   line-height: 1.2;
   margin-bottom: 0.5em;
-  /* width: 50%; */
+  font-family: "Hackney", "sans-serif";
+}
+
+.reason .text {
+  position: relative;
 }
 
 .reason .text::after {
   position: absolute;
   width: 100%;
-  top: 40%;
+  top: 20%;
   bottom: 0;
   margin: auto auto;
   content: "";
   display: block;
   background-color: #e40032;
   height: 8px;
+}
+
+/* =========== Products & Articles ========= */
+.filter-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #000;
+  margin-bottom: 25px;
+}
+
+.filterBtn {
+  margin: 0;
+  border: 1px solid #595959;
+}
+
+@media screen and (min-width: 992px) {
+  .filter-container {
+    display: block;
+  }
+  .filterBtn {
+    width: 100%;
+  }
+}
+
+.bd-grid {
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .bd-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.Card {
+  height: fit-content;
+  position: relative;
+  box-shadow: 13px 15px 17px -10px rgba(117, 116, 116, 0.89);
+  border-radius: 9px;
+}
+
+.card-img {
+  height: 20svh;
+  border-bottom: 4px solid #aa0000;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  .card-img {
+    height: 30svh;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .card-img {
+    height: 40svh;
+  }
+}
+
+.card-img img {
+  object-fit: cover;
+  max-width: 100%;
+  height: 100%;
+}
+
+.Card .detailsBtn {
+  padding: 12px;
+  border-radius: 0px 9px;
+  color: var(--red-color);
+  border: 2px solid var(--red-color);
+  transition: all 0.4s;
+}
+
+.Card .detailsBtn:hover {
+  background-color: var(--red-color);
+  color: #fff;
+}
+
+.Card .cartBtn {
+  padding: 12px;
+  border-radius: 9px 0px;
+  color: var(--black-color);
+  border: 2px solid var(--black-color);
+  transition: all 0.4s;
+}
+
+.Card .cartBtn:hover {
+  background-color: var(--black-color);
+  color: #fff;
+}
+
+.Card .read-btn {
+  border-radius: 9px 0;
+}
+
+/* =================== Responsive ================= */
+@media screen and (max-width: 768px) {
+  .hack-font-md {
+    font-size: 1.7rem;
+  }
+
+  .hack-font-lg {
+    font-size: 3rem;
+  }
+
+  .reason {
+    font-size: 3rem;
+  }
+  .btn-1 {
+    padding: 8px 12px;
+  }
+
+  .btn-2 {
+    padding: 8px 12px;
+  }
+
+  .reason .text {
+    font-size: 0.8em;
+  }
+}
+
+.product-cart-img {
+  object-fit: cover;
 }
