@@ -14,7 +14,7 @@ function PackageCard(props) {
         );
       })}
       <p className="soul-font fs-4">{price} EG</p>
-      <button className="btn-2 my-3" onClick={() => add(name, price)}>
+      <button className="btn-2 my-3 rounded fw-bold" onClick={() => add(name, price)}>
         Select
       </button>
     </div>

@@ -24,7 +24,7 @@ export default function ProductCard(props) {
 
         <div className="px-2">
           <h5 className="fw-bold my-1">{name}</h5>
-          <p className="my-2 lead">$ {price}</p>
+          <p className="my-2 lead fw-bold"> {price} EG</p>
         </div>
 
         <div className="d-flex justify-content-between pt-2">

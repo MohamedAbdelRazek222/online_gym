@@ -76,16 +76,16 @@ export default function Packages() {
     <div className="container py-5">
       {/* ========= Packages ========== */}
 
-      <h2 className="fw-bold text-light text-center mb-5 text-uppercase fs-1">
+      <h2 className="mb-4 pb-3 text-light hack-font-lg fw-bold ms-3 section-title text-center ">
         Choose your <span style={{ color: `#aa0000` }}>package</span>
       </h2>
 
       <div className="d-flex justify-content-around w-50 m-auto mb-5">
-        <button className="btn-1 fs-5" onClick={() => setFilterd("diet")}>
+        <button className="btn-1 fs-2 rounded px-5 fw-bold hack-font" onClick={() => setFilterd("diet")}>
           Diet
         </button>
         <button
-          className="btn-2 fs-5"
+          className="btn-2 fs-2 rounded fw-bold hack-font "
           onClick={() => setFilterd("training-diet")}
         >
           Training & Diet
@@ -152,10 +152,10 @@ export default function Packages() {
         </h2>
         <div className="row pt-3">
           <div className="col-md-6 mb-4">
-            <h4 className="fs-3 fw-bold mb-3">
+            <h4 className="fs-1 fw-bold mb-3 hack-font ">
               Package: <span className="red">{selectedPackage.name}</span>
             </h4>
-            <h4 className="fs-3 fw-bold">
+            <h4 className="fs-1 fw-bold hack-font ">
               Total Cost:{" "}
               <span className="red">
                 {parseInt(selectedPackage.price) +
@@ -183,7 +183,7 @@ export default function Packages() {
 
           {/* =============== Additional Features ======= */}
           <div className="col-md-6 text-dark">
-            <h4 className="fw-bold fs-4 mb-3">Additional Features</h4>
+            <h4 className="fw-bold fs-1 mb-3 hack-font  ">Additional Features :</h4>
             {additionalFeatures.map((element) => (
               <div className="d-flex" dir="rtl">
                 <input

@@ -8,6 +8,7 @@ function Insta() {
   return (
     <div className="images">
       <h2 className="hack-font-lg fw-bold text-center text-dark">#ONE_MORE</h2>
+      <p className="text-center lead hack-font red fs-3" style={{  letterSpacing: '0.3em' }}>Follow us</p>
       <div className="container m-auto gap-3 row py-4 px-0">
         <div className="col-md px-0" style={{ overflow: `hidden` }}>
           <a

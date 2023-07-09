@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Typical from "react-typical";
+
 import NavBar from "../../Components/NavBar";
 import About from "../../Components/About";
 import Split from "../../Components/Split";
@@ -20,6 +22,8 @@ import img5 from "../../assets/images/stories/5.jpeg";
 import img6 from "../../assets/images/stories/6.jpg";
 import img7 from "../../assets/images/stories/7.jpg";
 import img8 from "../../assets/images/stories/8.jpg";
+import img9 from "../../assets/images/stories/bicep.png";
+import img10 from "../../assets/images/stories/bicep2.png";
 
 import products from "../../assets/images/products2.jpg";
 import articles from "../../assets/images/articles.jpg";
@@ -32,6 +36,47 @@ import { BsArrowLeft } from "react-icons/bs";
 import SuccessCard from "../../Components/SuccessCard";
 
 export default function Home() {
+  const [text, setText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const [isLoaded, setIsLoaded] = useState(false);
+  const steps = [
+    "Unleash Your ",
+    "",
+  ];
+
+  useEffect(() => {
+    setIsLoaded(true);
+    setTimeout(startTyping, 3000);
+  }, []);
+
+  const startTyping = () => {
+    if (currentIndex < steps.length) {
+      const currentText = steps[currentIndex];
+      setCurrentIndex(currentIndex + 1);
+      if (currentText === "") {
+        setText("");
+      } else {
+        animateText(currentText);
+      }
+    } else {
+      setCurrentIndex(0);
+      setTimeout(startTyping, 3000);
+    }
+  };
+
+  const animateText = (currentText) => {
+    let index = 0;
+    let interval = setInterval(() => {
+      if (index <= currentText.length) {
+        setText(currentText.slice(0, index));
+        index++;
+      } else {
+        clearInterval(interval);
+        setTimeout(startTyping, 3000);
+      }
+    }, 100);
+  };
   return (
     <>
       <NavBar />
@@ -45,14 +90,27 @@ export default function Home() {
           <source src={video} type="video/mp4" />
         </video>
         <div className="overlay"></div>
-        <h1
-          className="header-title text-uppercase text-center text-light fw-bold position-relative p-4"
-          style={{ zIndex: `2` }}
-        >
-          Unleash Your <span className="red">Power</span>
-        </h1>
+        {isLoaded && (
+          <h1 className="header-title text-uppercase text-center text-light fw-bold position-relative p-4" style={{ zIndex: 2 }}>
+            <span style={{ whiteSpace: "pre-wrap" }}>{text}</span>
+            <span className="red">Power</span>
+          </h1>
+        )}
       </div>
+      <style>
+        {`
+        .header-title {
+          font-size: 6rem;
+          line-height: 1.2;
+        }
 
+        @media (max-width: 768px) {
+          .header-title {
+            font-size: 3rem;
+          }
+        }
+      `}
+      </style>
       {/* -----------About ------------ */}
       <About />
 
@@ -67,19 +125,22 @@ export default function Home() {
       >
         <div className="overlay2"></div>
         <div className="position-relative" style={{ zIndex: `2` }}>
-          <h4 className="mb-4 pb-3 text-light hack-font-md fw-bold ms-3 section-title position-relative">
+          <h4 className="mb-4 pb-3 text-light hack-font-lg fw-bold ms-3 section-title position-relative">
             Success Stories
           </h4>
 
-          <div className="d-flex justify-content-around align-items-center w-50 m-auto my-2 py-2 px-4">
-            <div>
-              <button className="btn-1 prev hack-font">
-                <span className="fs-3">Prev</span>
+          <div className="d-flex justify-content-center align-items-center w-50 m-auto my-2 py-2 px-4">
+          <div className="d-flex justify-content-center mx-1">
+          <button className="btn-1 prev hack-font rounded d-flex align-items-center">
+                <img  style={{ width: "2rem", height: "2rem"}} src={img9} alt="" className="me-2" />   
+                <span className="fs-3"> Prev </span>
               </button>
+              
             </div>
-            <div>
-              <button className="btn-2 next hack-font">
-                <span className="fs-3">Next</span>
+            <div className="d-flex justify-content-center">
+              <button className="btn-2 next hack-font rounded d-flex align-items-center">
+                <span className="fs-3">  Next </span>
+                <img  style={{ width: "2rem", height: "2rem"}} src={img10} alt="" className="me-2" /> 
               </button>
             </div>
           </div>
@@ -166,7 +227,7 @@ export default function Home() {
             </p>
           </div>
           <div className="col-md-8 d-flex align-items-center px-3 py-5 fs-5">
-            <button className="d-none d-lg-block btn-1 pre-testi">
+            <button className="d-none d-lg-block btn-1 pre-testi rounded">
               <BsArrowLeft className="fs-2" style={{ zIndex: `10` }} />
             </button>
 
@@ -248,7 +309,7 @@ export default function Home() {
               </SwiperSlide>
             </Swiper>
 
-            <button className="d-none d-lg-block btn-1 next-testi">
+            <button className="d-none d-lg-block btn-1 next-testi rounded">
               <BsArrowRight className="fs-2" />
             </button>
           </div>

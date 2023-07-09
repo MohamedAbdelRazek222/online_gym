@@ -18,7 +18,7 @@ export default function ArticleDetails() {
           <div className="col-md-5">
             <img src={urlFor(state.image[0])} className="w-100 mb-3" />
           </div>
-          <div className="col-md-7">
+          <div className="col-md-7" dir="rtl">
             <h3 className="fw-bold mb-4">{state.title}</h3>
             <p className="lead pe-3">{state.content}</p>
           </div>

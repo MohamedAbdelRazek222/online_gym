@@ -19,11 +19,11 @@ export default function About() {
       {/* =============== Switch =============== */}
       <div className="container-fluid">
         <div className="text-center py-5">
-          <h2 className="fw-bold mb-5">
+          <h2 className="fw-bold mb-5 hack-font-lg ">
             Online <span className="red">Packages</span> and{" "}
             <span className="red">Consultation</span>
           </h2>
-          <p className="lead fs-3 col-10 m-auto my-3">
+          <p className="lead fs-3 col-10 m-auto my-3 fw-bold">
             Introducing our Online Packages and Consultation services with our
             expert fitness coach! Whether you're unable to visit a gym or prefer
             the convenience of working out from home, our online programs are
@@ -36,7 +36,7 @@ export default function About() {
           leftImg={packages}
           leftLink={"packages"}
           leftIcon={"desktop"}
-          rightTitle={"consult"}
+          rightTitle={"Contact us"}
           rightImg={online}
           rightLink={"consultation"}
           rightIcon={"support"}

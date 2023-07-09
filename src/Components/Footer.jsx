@@ -16,7 +16,7 @@ export default function Footer() {
             <div className="col-md-7 row">
               <div className="col-8">
                 <h4 className="fw-bold hack-font-md">Quick links</h4>
-                <ul className="ps-0">
+                <ul className="ps-0 fw-bold">
                   <li>
                     <Link to="/products">products</Link>
                   </li>
@@ -29,7 +29,7 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="col-4">
-                <h4 className="fw-bold hack-font-md">Contact us</h4>
+                <h4 className="fw-bold hack-font fs-2">Contact us</h4>
                 <div className="icons d-flex mt-3">
                   <a
                     href="https://www.facebook.com/profile.php?id=100089778207014"

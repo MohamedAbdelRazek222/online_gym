@@ -11,7 +11,7 @@ function About() {
           <img src={eslam} className="w-100" />
         </div>
         <div className="col-md-5 d-flex flex-column justify-content-center">
-          <h3 className="mb-4 hack-font-md">
+          <h3 className="mb-4 hack-font-lg">
             Coach <span className="text-danger fw-bold">ESLAM</span>
           </h3>
           <p className="lead">
@@ -29,8 +29,8 @@ function About() {
       </div>
       <div className="row pt-5">
         <div className="col-md-5 d-flex flex-column justify-content-center">
-          <h3 className="hack-font-md">
-            Coach <span className="text-danger fw-bold">SOHILA</span>
+          <h3 className="hack-font-lg">
+          Dietitian <span className="text-danger fw-bold">SOHILA</span>
           </h3>
           <p className="lead py-4">
             Sohila, a highly knowledgeable Nutrition Expert with a strong

@@ -7,7 +7,7 @@ export default function Consultation() {
   return (
     <div className="container py-5">
       <div className="row">
-        <h2 className="fw-bold text-light text-center mb-5 text-uppercase fs-1">
+        <h2 className="mb-4 pb-3 text-light hack-font-lg fw-bold ms-3 section-title text-center ">
           Keep in <span style={{ color: `#aa0000` }}>Touch</span>
         </h2>
         <div className="col-md-6">
@@ -105,7 +105,7 @@ export default function Consultation() {
         </div>
 
         <div className="col-md-6 px-4 pt-4 text-light">
-          <p className="lead fs-3">
+          <p className="lead fs-3 fw-bold">
             send your inquiry and the coach will
             <br />
             in the shortest time
@@ -113,7 +113,7 @@ export default function Consultation() {
           <p className="fs-5">
             <span className="text-danger fw-bold">Email:</span> eslam@gmail.com
             <br />
-            <span className="text-danger fw-bold">phone:</span> 01090002058
+            <span className="text-danger fw-bold">phone:</span> +20 01090002058
           </p>
         </div>
       </div>

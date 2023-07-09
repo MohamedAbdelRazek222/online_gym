@@ -9,8 +9,8 @@ function SuccessCard({ img, age }) {
         style={{ borderBottom: `3px solid #aa0000` }}
       >
         <div className="info pb-1">
-          <h4 className="fw-bold">
-            Age: <span className="text-danger fw-bold">{age}</span>
+          <h4 className="fw-bold hack-font fs-3">
+            Age: <span className="text-danger fw-bold ">{age}</span>
           </h4>
         </div>
         <div className="logo p-1"><img src={logo} alt="logo" width={70} height={70} className="w-100" /></div>

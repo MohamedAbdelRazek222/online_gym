@@ -25,7 +25,7 @@ export default function InGym() {
             <img src={eslam} className="w-100" />
           </div>
           <div className="col-md-5 d-flex flex-column justify-content-center">
-            <h3 className="mb-4 hack-font-md">
+            <h3 className="mb-4 hack-font-lg">
               Coach <span className="text-danger fw-bold">ESLAM</span>
             </h3>
             <p className="lead">
@@ -113,7 +113,7 @@ export default function InGym() {
             <img src={inGYM} className="w-100" />
           </div>
           <div className="col-md-5 d-flex flex-column justify-content-center">
-            <h3 className="mb-4 hack-font-md">
+            <h3 className="mb-4 hack-font-lg">
               Muscle <span className="text-danger fw-bold">building</span>
             </h3>
             <p className="lead">
@@ -126,7 +126,7 @@ export default function InGym() {
         </div>
         <div className="row pt-5">
           <div className="col-md-5 d-flex flex-column justify-content-center">
-            <h3 className="hack-font-md">
+            <h3 className="hack-font-lg">
               Improve <span className="text-danger fw-bold">health</span>
             </h3>
             <p className="lead py-4">
