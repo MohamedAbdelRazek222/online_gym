@@ -13,4 +13,4 @@ Community Interaction: Engage with other fitness enthusiasts through forums, Q&A
 This project is developed using [technologies/frameworks used], aiming to provide a seamless and interactive fitness solution for users worldwide.
 
 # Home 
-![home](https://github.com/MohamedAbdelRazek222/online_gym/assets/118555438/1b30c649-d525-4f2e-937b-302053ebf33e)
+![home](https://github.com/MohamedAbdelRazek222/online_gym/assets/118555438/d2a51675-9b3c-4636-8e76-8ddf45b313a6)
