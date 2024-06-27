@@ -12,5 +12,4 @@ Community Interaction: Engage with other fitness enthusiasts through forums, Q&A
 
 This project is developed using [technologies/frameworks used], aiming to provide a seamless and interactive fitness solution for users worldwide.
 
-# Link 
-https://onemoregym.netlify.app/
+# Home 
